@@ -1,0 +1,20 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    container_name: "task-management-frontend"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/src/frontend
+    stdin_open: true
+    tty: true
+  backend:
+    build: ./backend
+    container_name: "task-manegiment-backend"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/src/backend
+    stdin_open: true
+    tty: true
